@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import './Currency.css'; // Import the CSS file
 
 const Currency = () => {
   const { currency, dispatch } = useContext(AppContext);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const setCurrencyHandler = (currency) => {
@@ -13,22 +13,20 @@ const Currency = () => {
     });
   };
 
-  //  '£' '€' '$' '₹'
-
-  const currencyLabel = ()=> {
-    switch(currency){
-      case '$' :
-        return '$ Dollar'
-      case '£' :
-        return '£ Pound'
-      case '€' :
-        return '€ Euro'
-      case '₹' :
-        return '₹ Ruppee'
+  const currencyLabel = () => {
+    switch (currency) {
+      case '$':
+        return '$ Dollar';
+      case '£':
+        return '£ Pound';
+      case '€':
+        return '€ Euro';
+      case '₹':
+        return '₹ Ruppee';
       default:
-        return ''
+        return '';
     }
-  }
+  };
 
   return (
     <div id="currency-menu" className="dropdown" style={{ cursor: 'pointer' }}>
@@ -41,16 +39,18 @@ const Currency = () => {
         style={{ backgroundColor: '#93e399', color: '#fff' }}
         onClick={() => setIsOpen(!isOpen)}
       >
-        Currency {'('}{currencyLabel()}{')'}
+        Currency {'('}
+        {currencyLabel()}
+        {')'}
       </button>
-      <ul className={`custom-menu dropdown-menu ${isOpen ? 'show' : ''} `}>
+      <ul className={`custom-menu dropdown-menu ${isOpen ? 'show' : ''}`}>
         <li>
           <button
             className="dropdown-item"
             type="button"
             onClick={() => setCurrencyHandler('$')}
           >
-           $ Dollar
+            $ Dollar
           </button>
         </li>
         <li>
@@ -59,7 +59,7 @@ const Currency = () => {
             type="button"
             onClick={() => setCurrencyHandler('£')}
           >
-           £ Pound
+            £ Pound
           </button>
         </li>
         <li>
@@ -68,7 +68,7 @@ const Currency = () => {
             type="button"
             onClick={() => setCurrencyHandler('€')}
           >
-           € Euro
+            € Euro
           </button>
         </li>
         <li>
@@ -77,7 +77,7 @@ const Currency = () => {
             type="button"
             onClick={() => setCurrencyHandler('₹')}
           >
-           ₹ Ruppee
+            ₹ Ruppee
           </button>
         </li>
       </ul>

@@ -1,0 +1,14 @@
+/* Currency.css */
+.custom-menu.dropdown-menu {
+    background-color: #93e399; /* Green background for the currency labels */
+  }
+  
+  .custom-menu.dropdown-menu li button {
+    color:black; /* White text color for currency labels */
+    transition: background-color 0.3s;
+  }
+  
+  .custom-menu.dropdown-menu li button:hover {
+    background-color: white; /* White background on hover for currency labels */
+  }
+  
