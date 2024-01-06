@@ -109,7 +109,7 @@ const AllocationForm = (props) => {
           <input
             placeholder='enter budget value'
             required="required"
-            type="number"
+            type="text"
             id="cost"
             value={cost}
             style={{marginLeft:"5px", size: 10 }}
