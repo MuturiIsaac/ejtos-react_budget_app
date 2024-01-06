@@ -29,7 +29,13 @@ const Currency = () => {
   };
 
   return (
-    <div id="currency-menu" className="dropdown" style={{ cursor: 'pointer' }}>
+    <div
+      id="currency-menu"
+      className="dropdown"
+      style={{ cursor: 'pointer' }}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       <button
         id="currency-menu-button"
         className="btn dropdown-toggle"
@@ -37,7 +43,6 @@ const Currency = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
         style={{ backgroundColor: '#93e399', color: '#fff' }}
-        onClick={() => setIsOpen(!isOpen)}
       >
         Currency {'('}
         {currencyLabel()}
